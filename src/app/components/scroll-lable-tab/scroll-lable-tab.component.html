@@ -1,0 +1,25 @@
+<!--
+ * @Descripttion: 
+ * @Author: heweilun weilun@ssc-hn.com
+ * @Date: 2023-01-28
+ * @LastEditors: heweilun weilun@ssc-hn.com
+ * @LastEditTime: 2023-01-28
+-->
+<div class="scrolllable-tab">
+    <ul class="scroll-menu">
+        <li *ngFor="let item of tabs;let i = index">
+            <a
+                href="JavaScript:void(0)"
+                [ngClass]="{'active': activeIndex === i}"
+                (click)="handleSelection(i)"
+                [ngStyle]="{color: activeIndex === i?activeColor:titleColor}"
+            >
+                {{item.title}}
+            </a>
+            <span class="indicator" *ngIf="activeIndex === i"></span>
+            <!-- <ng-template #elseElement>
+                <span>1111</span>
+            </ng-template> -->
+        </li>
+    </ul>      
+</div>
